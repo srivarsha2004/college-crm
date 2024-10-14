@@ -1,0 +1,101 @@
+@import "compass/css3";
+/* CARDS *****************************************************/
+ .card {
+	/* styling */
+	 width: 200px;
+	 height: 200px;
+	 margin: 5px;
+	 border: 1px solid #ccc;
+	 float: left;
+	 position: relative;
+	 overflow: hidden;
+}
+ .csstransforms3d .card {
+	 border: none;
+	 overflow: visible;
+	 -webkit-perspective: 600px;
+	 -moz-perspective: 600px;
+}
+ .card .front {
+	/* styling */
+	 width: 200px;
+	 height: 200px;
+	 background: #e2e2e2;
+	 border-bottom: 1px solid #e4e4e4;
+	 -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+	 -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+	 box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	 top: 0;
+	 left: 0;
+	 z-index: 900;
+	 float: none;
+	 position: absolute;
+	 -o-transition: all 0.4s ease-in-out;
+	 -ms-transition: all 0.4s ease-in-out;
+	 -moz-transition: all 0.4s ease-in-out;
+	 -webkit-transition: all 0.4s ease-in-out;
+	 transition: all 0.4s ease-in-out;
+}
+ .csstransforms3d .card .front {
+	/* styling */
+	 border: 1px solid #ccc;
+	 -webkit-transform: rotateX(0deg) rotateY(0deg);
+	 -webkit-transform-style: preserve-3d;
+	 -webkit-backface-visibility: hidden;
+	 -moz-transform: rotateX(0deg) rotateY(0deg);
+	 -moz-transform-style: preserve-3d;
+	 -moz-backface-visibility: hidden;
+}
+ .card.flip .front {
+	/* styling */
+	 -moz-box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+	 -webkit-box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+	 box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+	 z-index: 900;
+}
+ .csstransforms3d .card.flip .front {
+	 -webkit-transform: rotateY(180deg);
+	 -moz-transform: rotateY(180deg);
+}
+ .card .back {
+	/* styling */
+	 width: 200px;
+	 height: 200px;
+	 background: #fff;
+	/* DO NOT REMOVE: This is content padding for when it slides up (no flip) */
+	 padding-top: 10px;
+	 float: none;
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 z-index: 800;
+	 -o-transition: all 0.4s ease-in-out;
+	 -ms-transition: all 0.4s ease-in-out;
+	 -moz-transition: all 0.4s ease-in-out;
+	 -webkit-transition: all 0.4s ease-in-out;
+	 transition: all 0.4s ease-in-out;
+}
+ .csstransforms3d .card .back {
+	/* styling */
+	 border: 1px solid #e8e8e8;
+	 padding-top: 0;
+	/* overwrites the fallback when supported */
+	 -webkit-transform: rotateY(-180deg);
+	 -webkit-transform-style: preserve-3d;
+	 -webkit-backface-visibility: hidden;
+	 -moz-transform: rotateY(-180deg);
+	 -moz-transform-style: preserve-3d;
+	 -moz-backface-visibility: hidden;
+}
+ .card.flip .back {
+	/* styling */
+	 box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+	 -moz-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+	 -webkit-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+	 z-index: 1000;
+}
+ .csstransforms3d .card.flip .back {
+	 -webkit-transform: rotateX(0deg) rotateY(0deg);
+	 -moz-transform: rotateX(0deg) rotateY(0deg);
+}
+ 
